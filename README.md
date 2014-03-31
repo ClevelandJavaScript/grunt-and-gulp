@@ -68,7 +68,7 @@ Notice that we already have a "clean" task defined.  The "clean" task invokes th
   
 This gives us a way to clean stuff up and get back to a nice starting place.
 
-Try this out by running <code>grunt clean</code> from the command line.  You should see something like:
+**Run <code>grunt clean</code> from the command line**.  You should see something like:
 ```
 Running "clean:0" (clean) task
 Cleaning build...OK
@@ -110,7 +110,7 @@ copy: {
 
 *Be sure to make sure you've added commas to any previous blocks so that the JSON is valid.*
 
-Run <code>grunt copy</code> from the command line.  You should see the <code>build/grunt</code> directory appear.  It should have the static assets copied into it.
+**Run <code>grunt copy</code> from the command line**.  You should see the <code>build/grunt</code> directory appear.  It should have the static assets copied into it.
 
 To learn more about the Grunt "copy" plugin, see https://github.com/gruntjs/grunt-contrib-copy.
 
@@ -176,7 +176,7 @@ Add the following to the "Registered Tasks" section at the top of your file:
 grunt.registerTask("default", ["copy", "cssmin", "uglify"]);
 ````
 
-Run <code>grunt</code> from the command line.  You should see all three of your tasks ("copy", "cssmin" and "uglify") run back to back.
+**Run <code>grunt</code> from the command line**.  You should see all three of your tasks ("copy", "cssmin" and "uglify") run back to back.
 
 ### Grunt: Running a Web Server with a Watch
 We can have Grunt run a web server for us using the "connect" plugin.  In addition, we can have Grunt keep the web server online while it watches files on disk.  If any of these files change, Grunt will automatically run our build and update our web server's resources.
@@ -222,7 +222,7 @@ watch: {
 }
 ````
 
-Run <code>grunt server</code> to start the web server.  It'll start and Grunt will start watching for file changes.  
+**Run <code>grunt server</code> to start the web server**.  It'll start and Grunt will start watching for file changes.  
 
 You should be able to view your web page at <code>http://localhost:3000</code>.
 You should also be able to make changes to files under the <code>/src</code> directory and see Grunt automatically rebuild when you save.
@@ -258,7 +258,7 @@ compress: {
 }
 ````
 
-Run <code>grunt zip</code> to package up a zip of our build.  
+**Run <code>grunt zip</code> to package up a zip of our build**.
 
 Note the resulting file size and how long it took.  Can gulp do better?
 
@@ -280,7 +280,7 @@ This function uses the default <code>gulp.src()</code> method to grab at source 
   
 This gives us a way to clean stuff up and get back to a nice starting place.
 
-Try this out by running <code>gulp clean</code> from the command line.  You should see something like:
+**Run <code>gulp clean</code> from the command line**.  You should see something like:
 ```
 [gulp] Using gulpfile gulpfile.js
 [gulp] Starting 'clean'...
@@ -302,7 +302,7 @@ gulp.task("copy", function() {
 
 This pipes out static resources (images and html) to a <code>gulp.dest()</code> handler.  This handler is provided out of the box and simply writes the piped file resources to a target directory.
 
-Run <code>gulp copy</code> from the command line.  You should see the <code>build/grunt</code> directory appear.  It should have the static assets copied into it.
+**Run <code>gulp copy</code> from the command line**.  You should see the <code>build/grunt</code> directory appear.  It should have the static assets copied into it.
 
 ### Gulp: Concatenate and Minify CSS
 We have a couple of CSS files including Bootstrap's CSS and our own custom CSS.  We'd like to minify the CSS and concatenate it together into a single file so that it is as small as possible going over the wire.
@@ -325,7 +325,7 @@ gulp.task("styles", function() {
 
 This declares a task called "styles" that grab the source files and pipes them through a minifier (using the function variable <code>minifyCss</code>).  The minified results are concatenated together after being piped and joined together via the <code>concat</code> handler.  The resulting joined file is named <code>application.min.css</code> which is then written to the <code>build/gulp/css</code> directory.
 
-Run <code>gulp styles</code> from the command line.  You should see the minified CSS file appear in your build directory.
+**Run <code>gulp styles</code> from the command line**.  You should see the minified CSS file appear in your build directory.
 
 To learn more about the Gulp "minify-css" plugin, see https://github.com/jonathanepollack/gulp-minify-css.
 To learn more about the Gulp "concat" plugin, see https://github.com/wearefractal/gulp-concat.
@@ -351,7 +351,7 @@ gulp.task("scripts", function() {
 
 The <code>uglify</code> handler minifies the JS prior to it being concatenated together, renamed and dropped into the build directory.
 
-Run <code>gulp scripts</code> from the command line.  You should see the minified JS file appear in your build.
+**Run <code>gulp scripts</code> from the command line**.  You should see the minified JS file appear in your build.
 
 To learn more about the Gulp "uglify" plugin, see https://github.com/terinjokes/gulp-uglify.
 
@@ -364,7 +364,7 @@ Add the following to your gulp file:
 gulp.task("default", ["copy", "styles", "scripts"]);
 ````
 
-Run <code>gulp</code> from the command line.  You should see all three of your tasks ("copy", "styles" and "scripts") run back to back.
+**Run <code>gulp</code> from the command line**.  You should see all three of your tasks ("copy", "styles" and "scripts") run back to back.
 
 ### Gulp: Running a Web Server with a Watch
 We can have Gulp run a web server and watch for file changes.
@@ -402,7 +402,7 @@ gulp.task("server", ["watch"], function() {
 
 This task first runs the "watch" task to set up listeners.  And then it starts out web server to serve assets from the <code>build/gulp</code> directory.
 
-Run <code>gulp server</code> to start the web server.  It'll start and Gulp will start watching for file changes.  
+**Run <code>gulp server</code> to start the web server**.  It'll start and Gulp will start watching for file changes.  
 
 You should be able to view your web page at <code>http://localhost:3000</code>.
 You should also be able to make changes to files under the <code>/src</code> directory and see Gulp automatically rebuild when you save.
@@ -429,6 +429,8 @@ gulp.task("compress", function() {
 The "zip" task runs our build ("copy", "styles" and "scripts").  Once that finishes, it runs the "compress" task.  Note that the "copy", "styles" and "scripts" tasks are run in parallel as opposed to back-to-back.  Gulp is highly asynchronous and so our "compress" task doesn't run until ALL three tasks complete, in any order.
 
 The "compress" task grabs our build directory's contents and pipes them to a <code>zip</code> plugin handler that compresses them to a zip file named <code>gulp-app.zip</code>.  This zip file is written to the <code>build</code> directory.
+
+**Run <code>gulp zip</code> to compress the zip file**.
 
 Note the resulting file size and how long it took.  How does Gulp compare to Grunt?
 
