@@ -8,15 +8,15 @@ This repository contains exercises for setting up a build with some lightweight 
 ## Prerequisites
 You can run these exercises on your own laptop no matter whether it is of the Windows, Mac or Linux persuasion.  The only requirements are that you have an installation of Node.js on your machine.  
 
-- Install Node.js
+### Install Node.js
 
 Go to http://www.nodejs.org to download and install Node.js on your machine.  The default installation options are perfectly fine.
 
-- Grab a copy of this GitHub repository
+### Grab a copy of this GitHub repository
 
 You can either use Git and clone the repository master branch or you can download the source as a zip from the repository home page.  If you download a zip, make sure to uncompress it.
 
-- Open a command prompt (or terminal window)
+### Open a command prompt (or terminal window)
 
 Most of what you're going to do in terms of working with Grunt or Gulp will be from the command line.  On Windows, you will use a Command Prompt (Start > Run... > "cmd").  On a Mac, you'll use a Terminal Window (Applications > Terminal).
 	
