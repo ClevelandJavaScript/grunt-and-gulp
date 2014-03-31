@@ -136,7 +136,7 @@ cssmin: {
 
 This tells grunt to minify and concatenate the two files into a single <code>application.min.css</code> file.
 
-Run <code>grunt cssmin</code> from the command line.  You should see the minified CSS file appear in your build directory.
+**Run <code>grunt cssmin</code> from the command line**.  You should see the minified CSS file appear in your build directory.
 
 To learn more about the Grunt "cssmin" plugin, see https://github.com/gruntjs/grunt-contrib-cssmin.
 
