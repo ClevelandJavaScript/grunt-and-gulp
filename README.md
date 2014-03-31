@@ -49,10 +49,12 @@ Open up a command prompt into the project files directory:
 Now install the Grunt Client:
 
 	npm install grunt-cli -g
+	(or) sudo npm install grunt-cli -g
 	
 And install the Gulp Client:
 
 	npm install gulp -g
+	(or) sudo npm install gulp -g
 	
 And finally, install all project dependencies.  This will look at your package.json and download all of the project's Node.js module dependencies.  It might take a little while to run.  But once it's done, you'll be all set to start!
 
