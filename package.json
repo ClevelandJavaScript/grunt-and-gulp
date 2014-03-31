@@ -1,0 +1,23 @@
+{
+  "name": "cleveland-js-sample",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "*",
+	"grunt-contrib-clean": "*",
+	"grunt-contrib-copy": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-compress": "*",
+    "time-grunt": "*",
+    "gulp": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-minify-css": "*",
+    "gulp-serve": "*",
+	"gulp-watch": "*",
+	"gulp-zip": "*"
+  }
+}
