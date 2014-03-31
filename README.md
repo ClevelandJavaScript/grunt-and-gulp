@@ -165,7 +165,7 @@ uglify: {
 
 This tells grunt to minify and concatenate the three files into a single <code>application.min.js</code> file.
 
-Run <code>grunt uglify</code> from the command line.  You should see the minified JS file appear in your build.
+**Run <code>grunt uglify</code> from the command line**.  You should see the minified JS file appear in your build.
 
 To learn more about the Grunt "uglify" plugin, see https://github.com/gruntjs/grunt-contrib-uglify.
 
