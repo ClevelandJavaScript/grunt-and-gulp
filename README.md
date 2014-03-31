@@ -466,4 +466,14 @@ A few suggestions -
   	
 Note that moving jQuery and Bootstrap off onto a CDN is not an "optimization".  Assume these are to remain part of the source and focus on Grunt and Gulp mechanisms that can be introduced to lower file size or lower execution time.
   	
+## Presentation
+To view the accompanying presentation, go into the <code>/presentations</code> folder and run:
+	
+	npm install
+	gulp
+	
+You can then view the presenation at:
 
+	http://localhost:8787
+	
+Enjoy!
