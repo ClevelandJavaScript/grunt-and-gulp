@@ -9,7 +9,7 @@ var watch = require("gulp-watch");
 var zip = require('gulp-zip');
 
 gulp.task("clean", function() {
-	gulp.src("build").pipe(clean());
+    gulp.src("build").pipe(clean());
 });
 
 /** TODO: insert additional code here **/
