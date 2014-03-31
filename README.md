@@ -48,17 +48,15 @@ Open up a command prompt into the project files directory:
 
 Now install the Grunt Client:
 
-	- <code>npm install grunt-cli -g</code>
+	npm install grunt-cli -g
 	
-
 And install the Gulp Client:
 
-	- <code>npm install gulp -g</code>
+	npm install gulp -g
 	
 And finally, install all project dependencies.  This will look at your package.json and download all of the project's Node.js module dependencies.  It might take a little while to run.  But once it's done, you'll be all set to start!
 
-	- <code>npm install</code>
-
+	npm install
 
 ## Grunt Exercises
 In these exercises, we'll tell Grunt to build our web site and place the build resources into the <code>build/grunt</code> directory.  To do so, we'll edit the <code>Gruntfile.js</code> file.  We'll add Grunt configuration to the <code>grunt.initConfig()</code> configuration block.  We'll also register new tasks.
@@ -77,7 +75,6 @@ Cleaning build...OK
 
 Done, without errors.
 
-
 Execution Time (2014-03-30 22:32:41 UTC)
 loading tasks  335ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 98%
 clean:0          6ms  ▇ 2%
@@ -94,21 +91,21 @@ We can use the "copy" plugin to have Grunt do the copy for us.
 Add in the following to the Grunt.initConfig block:
 
 ```
-    copy: {
-		main: {
-			files: [{
-				expand: true,
-				src: ["images/**/*"],
-				dest: "build/grunt",
-				cwd: "src"
-			}, {
-				expand: true,
-				src: "index.html",
-				dest: "build/grunt",
-				cwd: "src"
-			}]
-		}
-    }
+copy: {
+	main: {
+		files: [{
+			expand: true,
+			src: ["images/**/*"],
+			dest: "build/grunt",
+			cwd: "src"
+		}, {
+			expand: true,
+			src: "index.html",
+			dest: "build/grunt",
+			cwd: "src"
+		}]
+	}
+}
 ````
 
 *Be sure to make sure you've added commas to any previous blocks so that the JSON is valid.*
@@ -125,16 +122,16 @@ Grunt provides a "cssmin" plugin that can be used to do this.
 Add in the following to the Grunt.initConfig block:
 
 ```
-	cssmin: {
-		main: {
-			files: {
-				"build/grunt/css/application.min.css": [
-					"src/vendor/bootstrap/css/bootstrap.css", 
-					"src/css/custom.css"
-				]
-			}				
-		}
+cssmin: {
+	main: {
+		files: {
+			"build/grunt/css/application.min.css": [
+				"src/vendor/bootstrap/css/bootstrap.css", 
+				"src/css/custom.css"
+			]
+		}				
 	}
+}
 ````
 
 This tells grunt to minify and concatenate the two files into a single <code>application.min.css</code> file.
@@ -151,17 +148,17 @@ Grunt provides as an "uglify" plugin that can be used to do this.
 Add the following to the Grunt.initConfig blocK:
 
 ```
-	uglify: {
-		main: {
-			files: {
-				"build/grunt/js/application.min.js": [
-					"src/vendor/jquery-2.1.0/jquery-2.1.0.js",
-					"src/vendor/bootstrap/js/bootstrap.js",
-					"src/js/custom.js"						
-				]
-			}				
-		}
+uglify: {
+	main: {
+		files: {
+			"build/grunt/js/application.min.js": [
+				"src/vendor/jquery-2.1.0/jquery-2.1.0.js",
+				"src/vendor/bootstrap/js/bootstrap.js",
+				"src/js/custom.js"						
+			]
+		}				
 	}
+}
 ````
 
 This tells grunt to minify and concatenate the three files into a single <code>application.min.js</code> file.
@@ -176,7 +173,7 @@ We can now wire all of these build steps together into a single "default" task. 
 Add the following to the "Registered Tasks" section at the top of your file:
 
 ```
-	grunt.registerTask("default", ["copy", "cssmin", "uglify"]);
+grunt.registerTask("default", ["copy", "cssmin", "uglify"]);
 ````
 
 Run <code>grunt</code> from the command line.  You should see all three of your tasks ("copy", "cssmin" and "uglify") run back to back.
@@ -194,42 +191,35 @@ grunt.registerTask("server", ["connect", "watch"]);
 We'll use the "connect" plugin to start a web server on port 3000 that serves files from our build directory.
 Add the following to your Grunt configuration:
 ```
-    connect: {
-		main: {
-			options: {
-				base: "build/grunt",
-				hostname: "localhost",
-				port: 3000
-            }				
-		}
-    }
+connect: {
+	main: {
+		options: {
+			base: "build/grunt",
+			hostname: "localhost",
+			port: 3000
+		}				
+	}
+}
 ````
 
 We'll use the "watch" plugin to watch for file changes to our source.  When CSS files change, we'll automatically run "cssmin".  When JS files change, we'll automatically run "uglify".  And when static files change, we'll run "copy".
 
 Add the following to your Grunt configuration:
 ```	
-	watch: {
-		styles: {
-			files: [
-				"src/**/*.css"
-			],
-			tasks: ["cssmin"]
-	    },
-	    scripts: {
-			files: [
-				"src/**/*.js",
-			],
-			tasks: ["uglify"]
-	    },
-		statics: {
-			files: [
-				"src/images/**/*",
-				"src/index.html"
-			],
-			tasks: ["copy"]
-		}			
-	}
+watch: {
+	styles: {
+		files: ["src/**/*.css"],
+		tasks: ["cssmin"]
+	},
+	scripts: {
+		files: ["src/**/*.js"],
+		tasks: ["uglify"]
+	},
+	statics: {
+		files: ["src/images/**/*", "src/index.html"],
+		tasks: ["copy"]
+	}			
+}
 ````
 
 Run <code>grunt server</code> to start the web server.  It'll start and Grunt will start watching for file changes.  
@@ -252,21 +242,20 @@ grunt.registerTask("zip", ["copy", "cssmin", "uglify", "compress"]);
 And add the following to the Grunt configuration:
 
 ```
-	compress: {
-		main: {
-			options: {
-				"mode": "zip",
-				"archive": "build/grunt-app.zip",
-				"level": 9
-			},
-			files: [{ 
-				expand: true, 
-				src : "**/*", 
-				cwd : "build/grunt/" 
-			}]
-		}
-	}				
-
+compress: {
+	main: {
+		options: {
+			"mode": "zip",
+			"archive": "build/grunt-app.zip",
+			"level": 9
+		},
+		files: [{ 
+			expand: true, 
+			src : "**/*", 
+			cwd : "build/grunt/" 
+		}]
+	}
+}
 ````
 
 Run <code>grunt zip</code> to package up a zip of our build.  
@@ -322,16 +311,16 @@ We'll use the Gulp "minify-css" and "concat" plugins to help us here.
 
 Add in the following to your gulp file:
 ```
-	gulp.task("styles", function() {
-		return gulp.src([
-			"src/lib/bootstrap/css/bootstrap.css", 
-			"src/css/custom.css"
-		])
-	        .pipe(minifyCss())
-	        .pipe(concat('application.min.css'))
-	        .pipe(gulp.dest('build/gulp/css'));
-	
-	});
+gulp.task("styles", function() {
+	return gulp.src([
+		"src/lib/bootstrap/css/bootstrap.css", 
+		"src/css/custom.css"
+	])
+        .pipe(minifyCss())
+        .pipe(concat('application.min.css'))
+        .pipe(gulp.dest('build/gulp/css'));
+
+});
 ````
 
 This declares a task called "styles" that grab the source files and pipes them through a minifier (using the function variable <code>minifyCss</code>).  The minified results are concatenated together after being piped and joined together via the <code>concat</code> handler.  The resulting joined file is named <code>application.min.css</code> which is then written to the <code>build/gulp/css</code> directory.
@@ -348,16 +337,16 @@ Gulp provides an "uglify" plugin that we can link into our piping chain to perfo
 
 Add in the following to your gulp file:
 ```
-	gulp.task("scripts", function() {
-	    return gulp.src([
-			"src/lib/jquery-2.1.0/jquery-2.1.0.js", 
-			"src/lib/bootstrap/js/bootstrap.js",
-			"src/js/custom.js"		
-		])
-	        .pipe(uglify())
-	        .pipe(concat('application.min.js'))
-	        .pipe(gulp.dest('build/gulp/js'));	
-	});
+gulp.task("scripts", function() {
+    return gulp.src([
+		"src/lib/jquery-2.1.0/jquery-2.1.0.js", 
+		"src/lib/bootstrap/js/bootstrap.js",
+		"src/js/custom.js"		
+	])
+        .pipe(uglify())
+        .pipe(concat('application.min.js'))
+        .pipe(gulp.dest('build/gulp/js'));	
+});
 ````
 
 The <code>uglify</code> handler minifies the JS prior to it being concatenated together, renamed and dropped into the build directory.
@@ -372,7 +361,7 @@ We can now wire all of these build steps together into a single "default" task. 
 Add the following to your gulp file:
 
 ```
-	gulp.task("default", ["copy", "styles", "scripts"]);
+gulp.task("default", ["copy", "styles", "scripts"]);
 ````
 
 Run <code>gulp</code> from the command line.  You should see all three of your tasks ("copy", "styles" and "scripts") run back to back.
@@ -391,11 +380,11 @@ gulp.task("watch", function() {
 		.pipe(watch(function() {
 			gulp.start("styles");
 		}));
-    gulp.src(["src/**/*.js"])
+	gulp.src(["src/**/*.js"])
 		.pipe(watch(function() {
 			gulp.start("scripts");
 		}));		
-    gulp.src(["src/images/**/*", "src/index.html"])
+	gulp.src(["src/images/**/*", "src/index.html"])
 		.pipe(watch(function() {
 			gulp.start("copy");
 		}));		
@@ -427,14 +416,14 @@ Let's add a task that will zip up our built web site.  We'll use this to see how
 
 Add the following to your gulp file:
 ```
-	gulp.task("zip", ["copy", "styles", "scripts"], function() {
-		return gulp.start("compress");
-	});
-	gulp.task("compress", function() {
-		gulp.src("build/gulp/**/*")
-			.pipe(zip("gulp-app.zip"))
-			.pipe(gulp.dest("build"));
-	});
+gulp.task("zip", ["copy", "styles", "scripts"], function() {
+	return gulp.start("compress");
+});
+gulp.task("compress", function() {
+	gulp.src("build/gulp/**/*")
+		.pipe(zip("gulp-app.zip"))
+		.pipe(gulp.dest("build"));
+});
 ````
 
 The "zip" task runs our build ("copy", "styles" and "scripts").  Once that finishes, it runs the "compress" task.  Note that the "copy", "styles" and "scripts" tasks are run in parallel as opposed to back-to-back.  Gulp is highly asynchronous and so our "compress" task doesn't run until ALL three tasks complete, in any order.
