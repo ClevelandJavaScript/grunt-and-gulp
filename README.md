@@ -438,13 +438,13 @@ To learn more about the Gulp "zip" plugin, see https://github.com/sindresorhus/g
 ## Grunt or Gulp
 With these exercises, we've put in place a mechanism to evaluate Grunt and Gulp based on execution times and resulting file size.
 
-*Comparing Execution Time*
+### Comparing Execution Time
 1. Run <code>grunt server</code> and then make a change to the <code>custom.js</code> and <code>custom.css</code> files.
 2. How long does Grunt take to rebuild the JS and CSS?
 3. Run <code>gulp server</code> and then make a change to the <code>custom.js</code> and <code>custom.css</code> files.
 4. How long does Gulp take to rebuild the JS and CSS?
 
-*Comparing File Size*
+### Comparing File Sizes
 1. Run <code>grunt zip</code> to produce the build zip using grunt.
 2. Run <code>gulp zip</code> to produce the build zip using gulp.
 3. Look at <code>build/grunt</code> and <code>build/gulp</code> to compare output directories of the build.
