@@ -42,7 +42,7 @@ src/
 	index.html
 ````
 
-These files provide a contrived but fun example of a simple web application with JavaScript, CSS, images and HTML.  In addition to the custom.css and custom.js files, it also pulls in several CSS and JS files from the vendor directories.  To optimize things, our index.html would like to pull in a single CSS file and a single JS file, each of which will be concatenated, minified and compressed during the build process to have as small a footprint as possible.
+These files provide a contrived but fun example of a simple web application with JavaScript, CSS, images and HTML.  In addition to the <code>custom.css</code> and <code>custom.js</code> files, it also pulls in several CSS and JS files from the vendor directories.  To optimize things, our index.html would like to pull in a single CSS file and a single JS file, each of which will be concatenated, minified and compressed during the build process to have as small a footprint as possible.
 
 Open up a command prompt into the project files directory:
 
@@ -62,7 +62,7 @@ And finally, install all project dependencies.  This will look at your package.j
 In these exercises, we'll tell Grunt to build our web site and place the build resources into the <code>build/grunt</code> directory.  To do so, we'll edit the <code>Gruntfile.js</code> file.  We'll add Grunt configuration to the <code>grunt.initConfig()</code> configuration block.  We'll also register new tasks.
 
 ### Grunt: Cleaning things up
-Open up the Gruntfile.js file in a text editor. You'll find placeholders there for where config and registered tasks can be inserted.
+Open up the <code>Gruntfile.js</code> file in a text editor. You'll find placeholders there for where config and registered tasks can be inserted.
 
 Notice that we already have a "clean" task defined.  The "clean" task invokes the grunt "clean" plugin.  The "clean" configuration tells Grunt to remove the "build" directory if it is found.
   
