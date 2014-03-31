@@ -450,5 +450,20 @@ With these exercises, we've put in place a mechanism to evaluate Grunt and Gulp 
 1. Run <code>grunt zip</code> to produce the build zip using grunt.
 2. Run <code>gulp zip</code> to produce the build zip using gulp.
 3. Look at <code>build/grunt</code> and <code>build/gulp</code> to compare output directories of the build.
-4. Look at gulp-app.zip and grunt-app.zip to compare zipped results.
+4. Look at <code>gulp-app.zip</code> and <code>grunt-app.zip</code> to compare zipped results.
+
+### Can you improve the results?
+
+What other optimizations could be introduced?
+
+A few suggestions -
+
+  	https://github.com/gruntjs/grunt-contrib-imagemin
+  	https://github.com/sindresorhus/gulp-imagemin
+  	
+  	https://github.com/gruntjs/grunt-contrib-htmlmin
+  	https://github.com/jonathanepollack/gulp-minify-html
+  	
+Note that moving jQuery and Bootstrap off onto a CDN is not an "optimization".  Assume these are to remain part of the source and focus on Grunt and Gulp mechanisms that can be introduced to lower file size or lower execution time.
+  	
 
