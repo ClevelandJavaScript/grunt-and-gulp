@@ -49,10 +49,12 @@ Open up a command prompt into the project files directory:
 Now install the Grunt Client:
 
 	npm install grunt-cli -g
+	(or) sudo npm install grunt-cli -g
 	
 And install the Gulp Client:
 
 	npm install gulp -g
+	(or) sudo npm install gulp -g
 	
 And finally, install all project dependencies.  This will look at your package.json and download all of the project's Node.js module dependencies.  It might take a little while to run.  But once it's done, you'll be all set to start!
 
@@ -163,7 +165,7 @@ uglify: {
 
 This tells grunt to minify and concatenate the three files into a single <code>application.min.js</code> file.
 
-Run <code>grunt uglify</code> from the command line.  You should see the minified JS file appear in your build.
+**Run <code>grunt uglify</code> from the command line**.  You should see the minified JS file appear in your build.
 
 To learn more about the Grunt "uglify" plugin, see https://github.com/gruntjs/grunt-contrib-uglify.
 
