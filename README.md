@@ -14,7 +14,16 @@ Go to http://www.nodejs.org to download and install Node.js on your machine.  Th
 
 ### Grab a copy of this GitHub repository
 
-You can either use Git and clone the repository master branch or you can download the source as a zip from the repository home page.  If you download a zip, make sure to uncompress it.
+You can either use Git and clone the repository master branch or you can download the source as a zip from the repository home page.
+
+If you're using Git from the command line, you can do something like this:
+
+````
+cd {your-project-directory}
+git clone https://github.com/ClevelandJavaScript/grunt-and-gulp.git
+````
+
+If you download a ZIP, make sure that you uncompress it into your project directory.
 
 ### Open a command prompt (or terminal window)
 
