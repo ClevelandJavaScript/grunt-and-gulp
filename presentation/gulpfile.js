@@ -93,7 +93,7 @@ gulp.task('serve', ['sass', 'jade'], function(cb) {
   startLivereload();
   connect()
   .use(connect.static('./public'))
-  .listen(8787);
+  .listen(8000);
   watch();
 });
 
