@@ -1,5 +1,7 @@
 # Grunt and Gulp
-This repository was prepared for the Cleveland JavaScript and Node.js meetups on March 31, 2014.  During the meetup, we take a look at Grunt and Gulp, which are two build systems for JavaScript applications.  These two build systems have competing philosophies.  Grunt is a configuration-driven approach whereas Gulp is a stream-oriented, code-driven approach.
+This repository was prepared for the Cleveland JavaScript and Node.js meetups on March 31, 2014.  The meetup group is located here: http://www.meetup.com/Cleveland-JavaScript-Meetup/
+
+During the meetup, we take a look at Grunt and Gulp, which are two build systems for JavaScript applications.  These two build systems have competing philosophies.  Grunt is a configuration-driven approach whereas Gulp is a stream-oriented, code-driven approach.
 
 Both are very good and have tradeoffs.  With Grunt 0.5 on the horizon and promising to feature more asynchronous stream-like mechanics, these two approaches will likely converge.  For the moment, they're great to use and interesting to experiment with.
 
