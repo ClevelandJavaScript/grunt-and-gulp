@@ -485,6 +485,6 @@ To view the accompanying presentation, go into the <code>/presentations</code> f
 	
 You can then view the presenation at:
 
-	http://localhost:8787
+	http://localhost:8000
 	
 Enjoy!
